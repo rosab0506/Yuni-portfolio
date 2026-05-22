@@ -1,0 +1,7 @@
+# robots.txt for mahedihasanemon.site
+User-agent: *
+Allow: /
+Disallow: /mhe-control-center/
+
+# Sitemap
+Sitemap: https://mahedihasanemon.site/sitemap.xml

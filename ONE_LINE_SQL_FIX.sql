@@ -1,0 +1,2 @@
+-- ONE-LINE FIX: Copy and paste this entire line into Supabase SQL Editor and click Run
+CREATE TABLE IF NOT EXISTS public.contact_messages (id UUID DEFAULT gen_random_uuid() PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL, subject TEXT NOT NULL, message TEXT NOT NULL, status TEXT DEFAULT 'new', created_at TIMESTAMPTZ DEFAULT NOW(), handled_by TEXT, handled_at TIMESTAMPTZ); CREATE INDEX IF NOT EXISTS idx_contact_messages_status ON public.contact_messages(status); CREATE INDEX IF NOT EXISTS idx_contact_messages_created_at ON public.contact_messages(created_at DESC);

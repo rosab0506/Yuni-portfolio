@@ -1,0 +1,31 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.production
+.vscode/
+.env.*.local
+.DS_Store
+*.log
+coverage/
+*.tgz
+pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+.cache/
+.parcel-cache/
+.vite/
+
+
+
+# System Files
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Supabase
+SUPABASE_READY.md
+supabase/
