@@ -1,3 +1,5 @@
 {
-  "/mhe-control-center/login/page": "app/mhe-control-center/login/page.js"
+  "/api/track-visit/route": "app/api/track-visit/route.js",
+  "/mhe-control-center/login/page": "app/mhe-control-center/login/page.js",
+  "/(public)/page": "app/(public)/page.js"
 }
