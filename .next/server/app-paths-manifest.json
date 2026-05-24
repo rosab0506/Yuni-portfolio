@@ -1,9 +1,1 @@
-{
-  "/api/track-visit/route": "app/api/track-visit/route.js",
-  "/api/visitor-logs/route": "app/api/visitor-logs/route.js",
-  "/mhe-control-center/login/page": "app/mhe-control-center/login/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/(admin)/mhe-control-center/dashboard/page": "app/(admin)/mhe-control-center/dashboard/page.js",
-  "/(admin)/mhe-control-center/visitors/page": "app/(admin)/mhe-control-center/visitors/page.js",
-  "/(public)/page": "app/(public)/page.js"
-}
+{}
