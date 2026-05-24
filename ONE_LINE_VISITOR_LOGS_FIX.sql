@@ -1,0 +1,2 @@
+-- ONE-LINE FIX: Copy and paste this entire line into Supabase SQL Editor and click Run
+CREATE TABLE IF NOT EXISTS public.visitor_logs (id UUID DEFAULT gen_random_uuid() PRIMARY KEY, ip_address TEXT NOT NULL, user_agent TEXT, page TEXT, visited_at TIMESTAMPTZ DEFAULT NOW()); CREATE INDEX IF NOT EXISTS idx_visitor_logs_visited_at ON public.visitor_logs(visited_at DESC);

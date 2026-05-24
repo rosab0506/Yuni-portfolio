@@ -40,13 +40,39 @@ export async function POST(request: NextRequest) {
     if (!response.ok) {
       const err = await response.json();
       console.error('[track-visit] Supabase insert failed:', err);
-      throw new Error(err.message || 'Failed to log visitor');
+      
+      // Check if error is about missing table
+      const errorMessage = err.message || err.error || 'Failed to log visitor';
+      if (errorMessage.includes('visitor_logs') && errorMessage.includes('not found')) {
+        console.error('[track-visit] Table not found - visitor_logs table needs to be created');
+        // Still return success so frontend doesn't break, but log the error
+        return NextResponse.json({ 
+          success: true,
+          warning: 'Visitor log not saved - database table not found',
+          note: 'Create visitor_logs table in Supabase to enable visitor tracking'
+        });
+      }
+      
+      throw new Error(errorMessage);
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : 'Failed to track visit';
+    
+    // Check for table not found error
+    if (errorMessage.includes('visitor_logs') && errorMessage.includes('not found')) {
+      console.error('[track-visit] Table not found - visitor_logs table needs to be created');
+      // Still return success so frontend doesn't break
+      return NextResponse.json({ 
+        success: true,
+        warning: 'Visitor log not saved - database table not found',
+        note: 'Create visitor_logs table in Supabase to enable visitor tracking'
+      });
+    }
+    
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : 'Failed to track visit' },
+      { error: errorMessage },
       { status: 500 }
     );
   }
