@@ -1,6 +1,6 @@
 {
-  "/api/track-visit/route": "app/api/track-visit/route.js",
-  "/(public)/about/page": "app/(public)/about/page.js",
-  "/(public)/page": "app/(public)/page.js",
-  "/(public)/contact/page": "app/(public)/contact/page.js"
+  "/api/visitor-logs/route": "app/api/visitor-logs/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(admin)/mhe-control-center/visitors/page": "app/(admin)/mhe-control-center/visitors/page.js",
+  "/(public)/page": "app/(public)/page.js"
 }

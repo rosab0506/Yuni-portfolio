@@ -1,4 +1,4 @@
-// File: D:\Rosa\my-portfolio - Copy\app\(public)\page.tsx
+// File: D:\Rosa\yuni-shimizu-portfolio\app\(public)\page.tsx
 import * as entry from '../../../../app/(public)/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
