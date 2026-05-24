@@ -1,8 +1,8 @@
-// File: D:\Rosa\yuni-shimizu-portfolio\app\test-supabase\page.tsx
-import * as entry from '../../../../app/test-supabase/page.js'
+// File: D:\Rosa\yuni-shimizu-portfolio\app\(admin)\mhe-control-center\dashboard\page.tsx
+import * as entry from '../../../../../../app/(admin)/mhe-control-center/dashboard/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../app/test-supabase/page.js')
+type TEntry = typeof import('../../../../../../app/(admin)/mhe-control-center/dashboard/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

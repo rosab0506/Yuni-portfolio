@@ -11,8 +11,18 @@ import { createClient, type SupabaseClient as SupabaseClientType } from '@supaba
 // Environment Variables
 // ============================================================================
 
-const supabaseUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.VITE_SUPABASE_URL) as string | undefined;
-const supabaseAnonKey = (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? process.env.VITE_SUPABASE_ANON_KEY) as string | undefined;
+// Try multiple environment variable names for compatibility
+const supabaseUrl = (
+  process.env.NEXT_PUBLIC_SUPABASE_URL ?? 
+  process.env.SUPABASE_URL ?? 
+  process.env.VITE_SUPABASE_URL
+) as string | undefined;
+
+const supabaseAnonKey = (
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? 
+  process.env.SUPABASE_ANON_KEY ?? 
+  process.env.VITE_SUPABASE_ANON_KEY
+) as string | undefined;
 
 // ============================================================================
 // Client Initialization
@@ -34,10 +44,22 @@ function createSupabaseClient(): SupabaseClientType | null {
     urlPrefix: supabaseUrl?.substring(0, 30)
   });
   
+  // Debug all possible environment variables
+  console.log('[Supabase] Environment variable check:', {
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET' : 'MISSING',
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'MISSING',
+    SUPABASE_URL: process.env.SUPABASE_URL ? 'SET' : 'MISSING',
+    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY ? 'SET' : 'MISSING',
+    VITE_SUPABASE_URL: process.env.VITE_SUPABASE_URL ? 'SET' : 'MISSING',
+    VITE_SUPABASE_ANON_KEY: process.env.VITE_SUPABASE_ANON_KEY ? 'SET' : 'MISSING',
+  });
+  
   if (!supabaseUrl || !supabaseAnonKey) {
     console.error('[Supabase] Missing environment variables!', {
-      VITE_SUPABASE_URL: supabaseUrl ? 'SET' : 'MISSING',
-      VITE_SUPABASE_ANON_KEY: supabaseAnonKey ? 'SET' : 'MISSING'
+      supabaseUrl: supabaseUrl ? 'SET' : 'MISSING',
+      supabaseAnonKey: supabaseAnonKey ? 'SET' : 'MISSING',
+      NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET' : 'MISSING',
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'MISSING',
     });
     return null;
   }
