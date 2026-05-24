@@ -1,6 +1,3 @@
 {
-  "/api/visitor-logs/route": "app/api/visitor-logs/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/(admin)/mhe-control-center/visitors/page": "app/(admin)/mhe-control-center/visitors/page.js",
-  "/(public)/page": "app/(public)/page.js"
+  "/mhe-control-center/login/page": "app/mhe-control-center/login/page.js"
 }
