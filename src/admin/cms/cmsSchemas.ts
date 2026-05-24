@@ -113,7 +113,7 @@ export const sectionSchemas: Record<string, SectionSchema> = {
       { name: 'status', label: 'Status', required: true },
       { name: 'orderIndex', label: 'Order Index', type: 'number' },
       { name: 'institution', label: 'Institution', required: true, placeholder: 'e.g., Harvard University' },
-      { name: 'degree', label: 'Degree', required: true, placeholder: 'e.g., Master's Degree' },
+      { name: 'degree', label: 'Degree', required: true, placeholder: "e.g., Marster's degree" },
       { name: 'field', label: 'Field of Study', required: true, placeholder: 'e.g., Computer Science' },
       { name: 'grade', label: 'Grade (Optional)', type: 'text', placeholder: 'e.g., 3.8 GPA, First Class Honours, Cum Laude' },
       { name: 'activities', label: 'Activities & Societies (Optional)', type: 'textarea', placeholder: 'e.g., Chess Club, Student Government, Dean\'s List' },
